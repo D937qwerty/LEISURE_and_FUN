@@ -64,7 +64,7 @@ const supportContent = `
   <p>Если у вас возникли вопросы, пишите или звоните нам:</p>
   <ul class="support-list">
     <li><span aria-hidden="true">✉️</span> Email: <a href="mailto:support@leisurefun.com">support@leisurefun.com</a></li>
-    <li><span aria-hidden="true">📱</span> Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></li>
+    <li><span aria-hidden="true">📱</span> Телефон: <a href="tel:+79292622479">+79292622479</a></li>
     <li><span aria-hidden="true">💬</span> Онлайн-чат: с 9:00 до 21:00 по МСК</li>
   </ul>
 `
