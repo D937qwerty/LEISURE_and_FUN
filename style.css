@@ -1,0 +1,215 @@
+/* Общие стили и фон */
+body {
+    margin: 0;
+    background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 10px;
+}
+
+/* Основной контейнер сайта */
+#app {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(252, 182, 159, 0.4);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Стили навигации слева */
+nav {
+    background-color: #ff715b;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    border-radius: 16px 0 0 16px;
+    box-shadow: inset 2px 0 8px rgba(0,0,0,0.1);
+}
+
+    /* Кнопки навигации */
+    nav button {
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+        padding: 12px 15px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        /* Иконки в кнопках */
+        nav button .icon {
+            font-size: 24px;
+            animation: iconPop 0.6s ease;
+        }
+
+        /* Активная кнопка и ховер эффект */
+        nav button.active,
+        nav button:hover {
+            background-color: #ff4a37;
+            box-shadow: 0 0 15px #ff4a37aa;
+        }
+
+/* Основная часть справа */
+main {
+    flex-grow: 1;
+    padding: 30px 40px;
+    background: #fff8f5;
+    border-radius: 0 16px 16px 0;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+/* Заголовки */
+h1 {
+    font-size: 2.2rem;
+    color: #ff5733;
+    margin-bottom: 15px;
+    user-select: none;
+    text-shadow: 1px 1px 4px #ffb9a4aa;
+}
+
+/* Список услуг с выпадающим подменю */
+.catalog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #555;
+    font-size: 18px;
+}
+
+    .catalog-list > li {
+        margin-bottom: 12px;
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+        user-select: none;
+        transition: color 0.2s ease;
+    }
+
+        .catalog-list > li:hover {
+            color: #ff715b;
+        }
+
+        /* Иконка стрелки рядом с каталогом */
+        .catalog-list > li .arrow {
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.3s ease;
+            font-size: 20px;
+            user-select: none;
+        }
+
+        /* Открытое состояние стрелки */
+        .catalog-list > li.expanded .arrow {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+/* Выпадающий список подуслуг */
+.catalog-sublist {
+    list-style: none;
+    margin-top: 8px;
+    margin-left: 25px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+    .catalog-sublist.open {
+        max-height: 500px; /* достаточно для всех подэлементов */
+        opacity: 1;
+    }
+
+    /* Элементы подменю */
+    .catalog-sublist li {
+        margin: 8px 0;
+        font-weight: 500;
+        cursor: default;
+    }
+
+/* Поддержка */
+.support-list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    color: #666;
+}
+
+    .support-list li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+
+
+/* Анимация иконок - лёгкое "всплытие" */
+@keyframes iconPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 720px) {
+    body {
+        padding: 20px 5px;
+    }
+
+    #app {
+        flex-direction: column;
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    nav {
+        flex-direction: row;
+        width: 100%;
+        border-radius: 16px 16px 0 0;
+        padding: 15px 10px;
+        overflow-x: auto;
+    }
+
+        nav button {
+            flex: 1 0 auto;
+            margin-bottom: 0;
+            margin-right: 10px;
+            font-size: 16px;
+            justify-content: center;
+        }
+
+    main {
+        padding: 20px 25px;
+        border-radius: 0 0 16px 16px;
+        max-height: none;
+    }
+}
