@@ -403,8 +403,8 @@ const supportContent = `
     <li>
       <span aria-hidden="true">Телефон для связи 📱</span>
       Телефон:
-      <button class="copy-btn" data-text="+79292622479" aria-label="Скопировать номер телефона">
-        <a href="tel:+79292622479">+7 (929) 262-24-79</a>
+      <button class="copy-btn" data-text="+70000000000" aria-label="Скопировать номер телефона">
+        <a href="tel:+70000000000">+7 (000) 000-00-00</a>
       </button>
     </li>
   </ul>
